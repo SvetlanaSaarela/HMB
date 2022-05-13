@@ -199,56 +199,56 @@ setMethod(
 #' summary(hmb_model)
 setGeneric(
   name = "summary",
-  def = function(obj) standardGeneric("summary")
+  def = function(object, ...) standardGeneric("summary")
 )
 
 #' @rdname summary-methods
 setMethod(
   "summary",
   "HMB",
-  definition = function(obj) {
-    validObject(obj)
+  definition = function(object) {
+    validObject(object)
 
     res = new('SummaryHMB')
-    res@method = obj@method
+    res@method = object@method
 
     res@samples = matrix(
-      c(obj@n$S, obj@n$Sa, obj@n$U),
+      c(object@n$S, object@n$Sa, object@n$U),
       1L, 3L, dimnames = list('')
     )
     colnames(res@samples) = c('S', 'Sa', 'U')
 
     res@estimation = matrix(
-      c(obj@mu, obj@muVar, obj@mu + qnorm(c(.025, .975), 0, sqrt(obj@muVar))),
+      c(object@mu, object@muVar, object@mu + qnorm(c(.025, .975), 0, sqrt(object@muVar))),
       1L, 4L, dimnames = list('')
     )
     colnames(res@estimation) = c('Mean', 'Variance', 'Lower 95 % conf', 'Upper 95 % conf')
 
-    betastd = sqrt(diag(obj@BetaCov))
+    betastd = sqrt(diag(object@BetaCov))
     res@betacoef = cbind(
-      obj@Beta, betastd, obj@Beta / betastd,
-      2 * pnorm(abs(obj@Beta), 0, betastd, lower.tail = FALSE)
+      object@Beta, betastd, object@Beta / betastd,
+      2 * pnorm(abs(object@Beta), 0, betastd, lower.tail = FALSE)
     )
 
     dimnames(res@betacoef) = list(
-      c('(Intercept)', colnames(obj@data$X_S)[-1]),
+      c('(Intercept)', colnames(object@data$X_S)[-1]),
       c('Estimate', 'Std. error', 'Z value', 'Pr(>|Z|)')
     )
 
-    alphastd = sqrt(diag(obj@AlphaCov))
+    alphastd = sqrt(diag(object@AlphaCov))
     res@alphacoef = cbind(
-      obj@Alpha, alphastd, obj@Alpha / alphastd,
-      2 * pnorm(abs(obj@Alpha), 0, alphastd, lower.tail = FALSE)
+      object@Alpha, alphastd, object@Alpha / alphastd,
+      2 * pnorm(abs(object@Alpha), 0, alphastd, lower.tail = FALSE)
     )
     dimnames(res@alphacoef) = list(
-      c('(Intercept)', colnames(obj@data$Z_Sa)[-1]),
+      c('(Intercept)', colnames(object@data$Z_Sa)[-1]),
       c('Estimate', 'Std. error', 'Z value', 'Pr(>|Z|)')
     )
 
-    if (obj@method %in% c('TSMB', 'GTSMB')) {
-      res@gammacoef$gamma = obj@Gamma
-      rownames(res@gammacoef$gamma) = colnames(obj@data$Z_Sa)
-      colnames(res@gammacoef$gamma) = colnames(obj@data$X_Sa)
+    if (object@method %in% c('TSMB', 'GTSMB')) {
+      res@gammacoef$gamma = object@Gamma
+      rownames(res@gammacoef$gamma) = colnames(object@data$Z_Sa)
+      colnames(res@gammacoef$gamma) = colnames(object@data$X_Sa)
       rownames(res@gammacoef$gamma)[1] = '(Intercept)'
       colnames(res@gammacoef$gamma)[1] = '(Intercept)'
     }
