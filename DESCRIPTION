@@ -18,7 +18,7 @@ LinkingTo: Rcpp, RcppArmadillo
 Collate: RcppExports.R helper_functions.R HMB-class.R SummaryHMB-class.R ghmb.R hmb.R ghmb_nonlin.R hmb_nonlin.R MethComp.R
 RoxygenNote: 7.1.2
 NeedsCompilation: yes
-Packaged: 2018-08-31 15:28:50 UTC; svla0001
+Packaged: 2022-05-08
 Author: Svetlana Saarela [cre, aut],
   Zhiqiang Yang [aut],
   Göran Ståhl [aut]

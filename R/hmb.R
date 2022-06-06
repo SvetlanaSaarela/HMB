@@ -1,17 +1,17 @@
-#' Hierarchical Model-Based estmation
+#' Hierarchical Model-Based estimation
 #' @encoding UTF-8
-#' @param y_S Response object that can be coersed into a column vector. The
+#' @param y_S Response object that can be coerced into a column vector. The
 #' \code{_S} denotes that \code{y} is part of the sample \emph{S}, with
 #' \eqn{N_S \le N_{Sa} \le N_U}{N_S \le N_Sa \le N_U}.
-#' @param X_S Object of predictors variables that can be coersed into a matrix.
+#' @param X_S Object of predictors variables that can be coerced into a matrix.
 #' The rows of \code{X_S} correspond to the rows of \code{y_S}.
-#' @param X_Sa Object of predictor variables that can be coresed into a matrix.
+#' @param X_Sa Object of predictor variables that can be coerced into a matrix.
 #' The set \emph{Sa} is the intermediate sample.
-#' @param Z_Sa Object of predictor variables that can be coresed into a matrix.
+#' @param Z_Sa Object of predictor variables that can be coerced into a matrix.
 #' The set \emph{Sa} is the intermediate sample, and the Z-variables often some
-#' sort of auxilairy, inexpensive data. The rows of \code{Z_Sa} correspond to
+#' sort of auxiliary, inexpensive data. The rows of \code{Z_Sa} correspond to
 #' the rows of \code{X_Sa}
-#' @param Z_U Object of predictor variables that can be coresed into a matrix.
+#' @param Z_U Object of predictor variables that can be coerced into a matrix.
 #' The set \emph{U} is the universal population sample.
 #' @return A fitted object of class HMB.
 #' @details

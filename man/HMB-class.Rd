@@ -8,5 +8,5 @@
 Class \code{HMB} is the base class for the HMB-package
 }
 \seealso{
-\code{\link{hmb}}, \code{\link{ghmb}}, \code{\link{tsmb}}, \code{\link{gtsmb}}
+\code{\link{hmb}}, \code{\link{ghmb}}, \code{\link{hmb_nonlin}}, \code{\link{ghmb_nonlin}}
 }
