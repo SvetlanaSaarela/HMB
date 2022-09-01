@@ -58,7 +58,6 @@ setValidity(
 #' Get model specifications of HMB-class object
 #'
 #' @name getSpec
-#' @rdname getSpec-methods
 #' @exportMethod getSpec
 #' @param obj Object of class HMB
 #' @return A list containing the estimated parameters, together with model arguments

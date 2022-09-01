@@ -20,7 +20,7 @@ The set \emph{Sa} is the intermediate sample.}
 
 \item{Z_Sa}{Object of predictor variables that can be coerced into a matrix.
 The set \emph{Sa} is the intermediate sample, and the Z-variables often some
-sort of auxilairy, inexpensive data. The rows of \code{Z_Sa} correspond to
+sort of auxiliary, inexpensive data. The rows of \code{Z_Sa} correspond to
 the rows of \code{X_Sa}}
 
 \item{Z_U}{Object of predictor variables that can be coerced into a matrix.
