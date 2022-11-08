@@ -3,7 +3,7 @@ library(data.table)
 library("ggplot2");
 library("plotly");
 library("GGally");
-library("rmarkdown");
+#library("rmarkdown");
 library("knitr");
 
 ##### Input data

@@ -28,9 +28,7 @@
 #' \deqn{E(\boldsymbol{u}) = \mathbf{0},
 #'       E(\boldsymbol{u} \boldsymbol{u}^T) = \sigma^2 \mathbf{I}}{
 #'       E(u) = 0, E(u u') = \sigma^2 I}
-#' @seealso \code{\link{summary}},
-#' \code{\link{getSpec}}.
-#' @export
+#' @seealso [summary()], [getSpec()]
 #' @examples
 #' pop_U  = sample(nrow(HMB_data), 20000)
 #' pop_Sa = sample(pop_U, 5000)

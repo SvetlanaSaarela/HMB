@@ -1,5 +1,5 @@
 #' Hierarchical Model-Based estimation
-#' @encoding UTF-8
+#' 
 #' @param y_S Response object that can be coerced into a column vector. The
 #' \code{_S} denotes that \code{y} is part of the sample \emph{S}, with
 #' \eqn{N_S \le N_{Sa} \le N_U}{N_S \le N_Sa \le N_U}.
@@ -28,9 +28,7 @@
 #' \deqn{E(\boldsymbol{u}) = \mathbf{0},
 #'       E(\boldsymbol{u} \boldsymbol{u}^T) = \sigma^2 \mathbf{I}}{
 #'       E(u) = 0, E(u u') = \sigma^2 I}
-#' @seealso \code{\link{summary}},
-#' \code{\link{getSpec}}.
-#' @export
+#' @seealso [summary()], [getSpec()]
 #' @examples
 #' pop_U  = sample(nrow(HMB_data), 20000)
 #' pop_Sa = sample(pop_U, 5000)

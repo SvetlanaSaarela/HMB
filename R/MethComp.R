@@ -1,40 +1,39 @@
 #' Generate Report for Estimation Method Comparison
 #'
-#' @param n
-#' @param SampFr
-#' @param SampFrlim
-#' @param EnLargeFactor
-#' @param TileSide
-#' @param PixelSize
-#' @param meanY_S
-#' @param sigmaY_S
-#' @param meanX_S
-#' @param sigmaX_S
-#' @param meanZ_S
-#' @param sigmaZ_S
-#' @param meanX_Sa
-#' @param sigmaX_Sa
-#' @param meanZ_Sa
-#' @param sigmaZ_Sa
-#' @param meanZ_U
-#' @param CorrYX
-#' @param CorrYZ
-#' @param CorrXZ
-#' @param AutoCorrF
-#' @param AutoCorrG
-#' @param AutoCorrG_star
-#' @param AutoCorr
-#' @param module
-#' @param ylim
-#' @param nameForestAtt
-#' @param nameRSdata
-#' @param nameStudyArea
-#' @param output_file
+#' @param n n
+#' @param SampFr SampFr
+#' @param SampFrlim SampFrlim
+#' @param EnLargeFactor Enlarge factor
+#' @param TileSide tile size
+#' @param PixelSize pixel size
+#' @param meanY_S mean Y of S
+#' @param sigmaY_S sigma Y of S
+#' @param meanX_S mean X of S
+#' @param sigmaX_S sigma X of S
+#' @param meanZ_S mean Z of Z
+#' @param sigmaZ_S sigma Z of Z
+#' @param meanX_Sa mean X of Sa
+#' @param sigmaX_Sa sigma X of Sa
+#' @param meanZ_Sa mean Z of Sa
+#' @param sigmaZ_Sa sigma Z of Sa
+#' @param meanZ_U mean Z of U
+#' @param CorrYX correlation Y and X
+#' @param CorrYZ correlation Y and Z
+#' @param CorrXZ correlation X and Z
+#' @param AutoCorrF autocorrelation F
+#' @param AutoCorrG autocorrelation G
+#' @param AutoCorrG_star autocorrelation G_star
+#' @param AutoCorr autocorrelation
+#' @param module module
+#' @param ylim ylim
+#' @param nameForestAtt name of forest attributes
+#' @param nameRSdata name of remote sensing data
+#' @param nameStudyArea name of study area
+#' @param output_file output file location
 #'
-#' @return
+#' @return NULL
 #' @export
 #'
-#' @examples
 MethComp <- function(n, SampFr, SampFrlim, EnLargeFactor, TileSide, PixelSize,
                      meanY_S,  sigmaY_S,
                      meanX_S,  sigmaX_S,
@@ -81,7 +80,7 @@ MethComp <- function(n, SampFr, SampFrlim, EnLargeFactor, TileSide, PixelSize,
                   #module = module,
                   ylim = ylim);
 
-  library("rmarkdown")
+  requireNamespace("rmarkdown")
   RMDname = system.file("rmd", "method_report.Rmd", package=getPackageName())
-  render(RMDname, params=listData, output_file = output_file, output_format="html_document")
+  rmarkdown::render(RMDname, params=listData, output_file = output_file, output_format="html_document")
 }

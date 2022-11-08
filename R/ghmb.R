@@ -1,5 +1,5 @@
 #' Generalized Hierarchical Model-Based estimation method
-#' @encoding UTF-8
+#'
 #' @param y_S Response object that can be coerced into a column vector. The
 #' \code{_S} denotes that \code{y} is part of the sample \emph{S}, with
 #' \eqn{N_S \le N_{Sa} \le N_U}{N_S \le N_Sa \le N_U}.
@@ -17,7 +17,9 @@
 #' \epsilon_S}, up to a constant.
 #' @param Sigma_Sa The covariance structure of \eqn{\boldsymbol{u}_{Sa}}{
 #' u_Sa}, up to a constant.
-#' @details
+#'
+#' @return A fitted object of class HMB.
+#' #' @details
 #' The GHMB assumes two models
 #' \deqn{y = \boldsymbol{x} \boldsymbol{\beta} + \epsilon}{
 #'       y = x \beta + \epsilon}
@@ -31,10 +33,7 @@
 #' \deqn{E(\boldsymbol{u}) = \mathbf{0},
 #'       E(\boldsymbol{u} \boldsymbol{u}^T) = \sigma^2 \boldsymbol{\Sigma}}{
 #'       E(u) = 0, E(u u') = \sigma^2 \Sigma}
-#' @return A fitted object of class HMB. 
 #' @seealso \code{\link{summary}},
-#' \code{\link{getSpec}}.
-#' @export
 #' @examples
 #' pop_U    = sample(nrow(HMB_data), 20000)
 #' pop_Sa   = sample(pop_U, 2500)
@@ -54,7 +53,6 @@
 #' ghmb_model
 #' @references Saarela, S., Holm, S., Healey, S.P., Andersen, H.-E., Petersson, H., Prentius, W., Patterson, P.L., Næsset, E., Gregoire, T.G. & Ståhl, G. (2018). 
 #' Generalized Hierarchical Model-Based Estimation for Aboveground Biomass Assessment Using GEDI and Landsat Data, \emph{Remote Sensing, 10(11),} 1832.
-
 #' @export
 ghmb = function(
   y_S,

@@ -22,3 +22,13 @@ popCheck = function(
     stop('Z_Sa and Z_U have different number of columns.')
   }
 }
+
+
+#' HMB test data
+#'
+#' @name HMB_data
+#' @docType data
+#' @author 
+#' @references
+#' @keywords data
+NULL

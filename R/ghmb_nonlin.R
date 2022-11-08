@@ -32,9 +32,7 @@
 #'       E(\boldsymbol{u} \boldsymbol{u}^T) = \sigma^2 \boldsymbol{\Sigma}}{
 #'       E(u) = 0, E(u u') = \sigma^2 \Sigma}
 #' @return A fitted object of class HMB. 
-#' @seealso \code{\link{summary}},
-#' \code{\link{getSpec}}.
-#' @export
+#' @seealso {[summary()]}, {[getSpec()]}.
 #' @examples
 #' pop_U    = sample(nrow(HMB_data), 20000)
 #' pop_Sa   = sample(pop_U, 2500)
