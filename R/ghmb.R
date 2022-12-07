@@ -1,4 +1,4 @@
-#' Generalized Hierarchical Model-Based estimation method
+#' Generalized Hierarchical Model-Based (GHMB) estimation method
 #'
 #' @param y_S Response object that can be coerced into a column vector. The
 #' \code{_S} denotes that \code{y} is part of the sample \emph{S}, with

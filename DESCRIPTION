@@ -2,7 +2,7 @@ Package: HMB
 Type: Package
 Title: Hierarchical Model-Based Estimation Approach
 Version: 2.0
-Date: 2022-12-01
+Date: 2022-12-07
 Authors@R: c(
               person("Svetlana", "Saarela", role = c("cre", "aut"), email = "svetlana.saarela@nmbu.no"),
               person("Zhiqiang", "Yang", role = "aut", email='zhiqiangyang@usda.gov'),
@@ -18,7 +18,7 @@ LinkingTo: Rcpp, RcppArmadillo
 Collate: RcppExports.R helper_functions.R HMB-class.R SummaryHMB-class.R ghmb.R hmb.R ghmb_nonlin.R hmb_nonlin.R MethComp.R
 RoxygenNote: 7.2.2
 NeedsCompilation: yes
-Packaged: 2022-05-08
+Packaged: 2022-12-07
 Author: Svetlana Saarela [cre, aut],
   Zhiqiang Yang [aut],
   Göran Ståhl [aut]

@@ -1,4 +1,4 @@
-#' Generalized Hierarchical Model-Based estimation method
+#' Generalized Nonlinear Hierarchical Model-Based (GNHMB) estimation method
 #' @encoding UTF-8
 #' @param y_S Response object that can be coerced into a column vector. The
 #' \code{_S} denotes that \code{y} is part of the sample \emph{S}, with
@@ -18,13 +18,13 @@
 #' @param Sigma_Sa The covariance structure of \eqn{\boldsymbol{u}_{Sa}}{
 #' u_Sa}, up to a constant.
 #' @details
-#' The GHMB assumes two models
-#' \deqn{y = \boldsymbol{x} \boldsymbol{\beta} + \epsilon}{
-#'       y = x \beta + \epsilon}
-#' \deqn{\boldsymbol{x} \boldsymbol{\beta} = \boldsymbol{z} \boldsymbol{\alpha} + \boldsymbol{u}}{
-#'       x \beta = z \alpha + u}
+#' The GNHMB assumes two nonlinear models
+#' \deqn{y = f(\boldsymbol{x}, \boldsymbol{\beta} )+ \epsilon}{
+#'       y = f(x, \beta) + \epsilon}
+#' \deqn{f(\boldsymbol{x}, \boldsymbol{\beta}) = g(\boldsymbol{z}, \boldsymbol{\alpha}) + \boldsymbol{u}}{
+#'       f(x, \beta) = g(z, \alpha) + u}
 #' \deqn{\epsilon \perp u}{\epsilon indep. u}
-#' For a sample from the superpopulation, the GHMB assumes
+#' For a sample from the superpopulation, the GNHMB assumes
 #' \deqn{E(\boldsymbol{\epsilon}) = \mathbf{0},
 #'       E(\boldsymbol{\epsilon} \boldsymbol{\epsilon}^T) = \omega^2 \boldsymbol{\Omega}}{
 #'       E(\epsilon) = 0, E(\epsilon \epsilon') = \omega^2 \Omega}
@@ -53,7 +53,6 @@
 #' @references Saarela, S., Wästlund, A., Holmström, E., Mensah, A.A., Holm, S., Nilsson, M., Fridman, J. & Ståhl, G. (2020). 
 #' Mapping aboveground biomass and its uncertainty using LiDAR and field data, accounting for tree-level allometric and LiDAR model errors,
 #' \emph{Forest Ecosystems, 7(43),} 1-17.
-
 #' @export
 ghmb_nonlin = function(
   y_S,
