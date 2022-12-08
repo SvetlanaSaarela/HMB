@@ -1,10 +1,11 @@
-library(nlme)
-library(data.table)
+library("nlme");
+library("data.table");
 library("ggplot2");
 library("plotly");
 library("GGally");
 #library("rmarkdown");
 library("knitr");
+library("Deriv");
 
 ##### Input data
 

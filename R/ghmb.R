@@ -1,18 +1,17 @@
 #' Generalized Hierarchical Model-Based (GHMB) estimation method
 #'
 #' @param y_S Response object that can be coerced into a column vector. The
-#' \code{_S} denotes that \code{y} is part of the sample \emph{S}, with
-#' \eqn{N_S \le N_{Sa} \le N_U}{N_S \le N_Sa \le N_U}.
+#' \code{_S} denotes that \code{y} is part of the data set \emph{S}.
 #' @param X_S Object of predictors variables that can be coerced into a matrix.
 #' The rows of \code{X_S} correspond to the rows of \code{y_S}.
 #' @param X_Sa Object of predictor variables that can be coerced into a matrix.
-#' The set \emph{Sa} is the intermediate sample.
+#' The set \emph{Sa} is the intermediate data set.
 #' @param Z_Sa Object of predictor variables that can be coerced into a matrix.
-#' The set \emph{Sa} is the intermediate sample, and the Z-variables often some
+#' The set \emph{Sa} is the intermediate data set, and the Z-variables often some
 #' sort of auxiliary, inexpensive data. The rows of \code{Z_Sa} correspond to
 #' the rows of \code{X_Sa}
 #' @param Z_U Object of predictor variables that can be coerced into a matrix.
-#' The set \emph{U} is the universal population sample.
+#' The set \emph{U} is the target population.
 #' @param Omega_S The covariance structure of \eqn{\boldsymbol{\epsilon}_{S}}{
 #' \epsilon_S}, up to a constant.
 #' @param Sigma_Sa The covariance structure of \eqn{\boldsymbol{u}_{Sa}}{

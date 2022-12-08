@@ -1,6 +1,6 @@
 #' Generate Report for Estimation Method Comparison
 #'
-#' @param n n
+#' @param n number of observations
 #' @param SampFr SampFr
 #' @param SampFrlim SampFrlim
 #' @param EnLargeFactor Enlarge factor
@@ -27,11 +27,62 @@
 #' @param module module
 #' @param ylim ylim
 #' @param nameForestAtt name of forest attributes
-#' @param nameRSdata name of remote sensing data
+#' @param nameRSdata name of remotely sensed data
 #' @param nameStudyArea name of study area
 #' @param output_file output file location
 #'
 #' @return NULL
+#' @examples
+#' 
+#' n = 100;
+#' SampFr = 0.02;
+#' SampFrlim = 0.1;
+#' EnLargeFactor = 9;
+#' TileSide = 1; # in [km]
+#' 
+#' meanY_S = 426.47;
+#' sigmaY_S = 62201.45^0.5;
+#' 
+#' meanX_S = 826.27;
+#' meanX_Sa = 822.43;
+#' meanX_U = 822.43;
+#' sigmaX_S = 338765.20^0.5;
+#' sigmaX_Sa = 288367.00^0.5;
+#' 
+#' meanZ_S = 36.91;
+#' meanZ_Sa = 37.46;
+#' meanZ_U = 37.31;
+#' sigmaZ_S = 38.16^0.5;
+#' sigmaZ_Sa = 73.86^0.5;
+#' 
+#' CorrYX = 0.715;
+#' CorrYZ = 0.349;
+#' CorrXZ = 0.748;
+#' 
+#' AutoCorrF = 0.7; 
+#' AutoCorrG_star = 0.8; 
+#' AutoCorrG = 0.9;
+#' AutoCorr = TRUE;
+#' 
+#' PixelSize = 25^2; 
+#' 
+#' module = "All";
+#' ylim = c(40, 40, 50, 40, 100);
+#' nameForestAtt = "AGB";
+#' nameRSdata = c("GEDI", "TanDEM-X");
+#' nameStudyArea = "TEF";
+#' 
+#' resultsTEF = MethComp(n, SampFr, SampFrlim, EnLargeFactor, TileSide, PixelSize, 
+#' meanY_S,  sigmaY_S, meanX_S,  sigmaX_S, meanZ_S,  sigmaZ_S,  
+#' meanX_Sa, sigmaX_Sa, meanZ_Sa, sigmaZ_Sa, meanZ_U, 
+#' CorrYX, CorrYZ, CorrXZ, AutoCorrF, AutoCorrG, AutoCorrG_star, AutoCorr,
+#' module, ylim, nameForestAtt, nameRSdata, nameStudyArea);
+#' resultsTEF
+#' 
+#' @references Saarela, S., Holm, S., Healey, S.P., Patterson, P.L., Yang, Z., Andersen, H.E., 
+#' Dubayah, R.O., Qi, W., Duncanson, L.I., Armston, J.D., Gobakken, T., Næsset, E., Ekström, M. & Ståhl, G. (2022). 
+#' Comparing frameworks for biomass prediction for the Global Ecosystem Dynamics Investigation. 
+#' \emph{Remote Sensing of Environment 278,} 113074.
 #' @export
 #'
 MethComp <- function(n, SampFr, SampFrlim, EnLargeFactor, TileSide, PixelSize,
